@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import App from './App.jsx'
 
 
-ReactDOM.render(<div>Search All</div>, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'))
