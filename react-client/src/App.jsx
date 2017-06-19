@@ -1,6 +1,7 @@
 // create app structure 
-
 import React, { Component } from 'react';
+// add css file 
+import './style.css';
 
 class App extends Component {
   // add render component 
