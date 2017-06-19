@@ -11,18 +11,18 @@ class App extends Component {
     return (
       <div>
         <div className='title'>
-          All Music Search
+          Music App to Rule Them All
       </div>
         <div>
           <input placeholder='Search for Your Artist Here' />
           <button>Search!</button>
         </div>
         <div className='artistProfile'>
-          <div>Picture Goes Here</div>
-          <div>Name Goes Here</div>
+          <div>Artist Picture Goes Here</div>
+          <div>Artist Name Goes Here</div>
         </div>
         <div className='music'>
-          Music Goes Here
+          Artist Music Goes Here
         </div>
       </div>
     )
