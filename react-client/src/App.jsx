@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 // add css file 
 import './style.css';
 
+// import multiple items from react - bootstrap 
+import { FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
+
 class App extends Component {
   // add render component 
   render() {
@@ -10,7 +13,7 @@ class App extends Component {
     // add title, search bar, submit button 
     // add artist picture, name and gallery 
     return (
-      <div>
+      <div className='App'>
         <div className='title'>
           Music App to Rule Them All
       </div>
