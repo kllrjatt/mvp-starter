@@ -2,3 +2,13 @@
   text-align: center;
   padding: 10px;
 }
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.AppTitle {
+  font-size: 25px;
+  font-weight: bold;
+}

@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import './style.css';
 
 // import multiple items from react - bootstrap 
-import { FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
+import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 
 class App extends Component {
   // add render component 
@@ -14,13 +14,18 @@ class App extends Component {
     // add artist picture, name and gallery 
     return (
       <div className='App'>
-        <div className='title'>
-          Music App to Rule Them All
+        <div className='AppTitle'>
+          OneMusic App to Rule Them All
       </div>
-        <div>
-          <input placeholder='Search for Your Artist Here' />
-          <button>Search!</button>
-        </div>
+        <FormGroup>
+          <InputGroup>
+            <FormControl type='text'
+              placeholder='Search for a Artist' />
+            <InputGroup.Addon>
+              <Glyphicon glyph='search'></Glyphicon>
+            </InputGroup.Addon>
+          </InputGroup>
+        </FormGroup>
         <div className='artistProfile'>
           <div>Artist Picture Goes Here</div>
           <div>Artist Name Goes Here</div>
