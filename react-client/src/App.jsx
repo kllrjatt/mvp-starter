@@ -7,10 +7,22 @@ import './style.css';
 import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 
 class App extends Component {
+  // add constructor super and this.state 
+  // this.state is just a query 
+  constructor(props) {
+    super(props)
+    this.state = {
+      query: ''
+    }
+  }
+
+
   // add render component 
   render() {
     // add return function and add div tag to it with some text
     // add title, search bar, submit button 
+    // use bootstrap components for css 
+    // form group, form control, inputgroup and icon for search 
     // add artist picture, name and gallery 
     return (
       <div className='App'>
