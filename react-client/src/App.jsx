@@ -21,20 +21,6 @@ class App extends Component {
     // add url for search
     var url = 'https://api.spotify.com/v1/search?';
     var searchUrl = `${url}q=${this.state.query}&type=artist&limit=1`
-    // use postman to add settings to the search function with token and cache 
-    var options = {
-      "async": true,
-      "crossDomain": true,
-      "url": this.searchUrl,
-      "method": "GET",
-      "headers": {
-        "authorization": "Bearer BQCRW7PfM9R1h0TyB2HeeNKLKiGubRM6osif_fLCMHVG7pmsmvbZrCWcyPoJROooIOCFJCThoHCns0KSubgviBJK0ICWrUT0Y0nE7u_TdSngpLeBupnZDoiD9mP5Xh3_8ncpodOsH3C2bkcCah47ZtNziYJAzfN8hiicXWO4ru0nDwCEcXkHUnZaapVd5ezZ5JWp",
-        "cache-control": "no-cache"
-      }
-    }
-    // add fetch function 
-    fetch(options).then(response => console.log(response))
-      // .then(json => console.log(json))
   }
 
   // add render component 
