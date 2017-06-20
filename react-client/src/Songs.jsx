@@ -12,9 +12,30 @@ class Songs extends Component {
   }
   playSong(url) {
     var audio = new Audio(url);
+    if (!this.state.status) {
+      audio.play();
+      this.setState({
+        currentUrl: url,
+        audio: audio,
+        status: true
+      })
+    } else {
+      if (this.state.currentUrl === url) {
+        this.state.audio.pause();
+        this.setState({
+          status: false
+        })
+      } else {
+        this.state.audio.pause();
+        audio.play();
+        this.setState({
+          currentUrl: url,
+          audio: audio,
+          status: true
+        })
+      }
+    }
 
-
-    audio.play();
   }
   render() {
     var tracks = this.props.tracks;
