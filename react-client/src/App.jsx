@@ -7,6 +7,7 @@ import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
 import Promise from 'promise';
 import Profile from './Profile.jsx'
+import Songs from './Songs.jsx'
 
 
 class App extends Component {
@@ -16,7 +17,8 @@ class App extends Component {
     super(props)
     this.state = {
       query: '',
-      artist: null
+      artist: null,
+      tracks: []
     }
   }
 
@@ -41,10 +43,11 @@ class App extends Component {
       artist: this.state.query
     })
       .then((response) => {
-        var parsed = JSON.parse(response.data);
-        var artist = parsed.artists.items[0];
+        var artist = JSON.parse(response.data[0]).artists.items[0];
+        var tracks = JSON.parse(response.data[1]).tracks
         this.setState({ artist })
-
+        this.setState({ tracks })
+        console.log(this.state)
       })
       .catch((error) => {
         console.log('There is a post request error', error)
@@ -84,9 +87,7 @@ class App extends Component {
           this.state.artist !== null ?
             <div>
               <Profile artist={this.state.artist} />
-              <div className='music'>
-                Artist Music Goes Here
-              </div>
+              <Songs tracks={this.state.tracks}/>
             </div>
             : <div></div>
         }

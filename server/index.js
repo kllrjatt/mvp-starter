@@ -93,7 +93,6 @@ app.post('/artist', (request, response) => {
 
       rp(musicOptions)
         .then((music) => {
-          console.log(music)
           response.write(JSON.stringify(music) +']')
           response.end()
         })
