@@ -1,0 +1,13 @@
+add spotify schema 
+
+add data to data base 
+
+add rendering to front end 
+
+add you tube search at same time 
+
+add you tube schema 
+
+render you tube search results on page . top 5 
+player for number 0 
+
