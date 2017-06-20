@@ -19,6 +19,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "axios": "^0.16.2",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "express": "^4.15.0",
@@ -28,6 +29,8 @@
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.4.2",
     "request": "^2.81.0",
-    "request-promises": "^1.1.0"
+    "request-promise": "^4.2.1",
+    "request-promises": "^1.1.0",
+    "xml2js": "^0.4.17"
   }
 }
