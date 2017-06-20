@@ -54,6 +54,7 @@ class App extends Component {
   }
   // add render component 
   render() {
+    console.log(this.props)
     // add return function and add div tag to it with some text
     // add title, search bar, submit button 
     // use bootstrap components for css 
