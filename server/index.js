@@ -55,7 +55,7 @@ app.post('/music', (request, response) => {
     {
       'postman-token': '4b11e797-b9b5-c5fd-ed06-6544c6c009b9',
       'cache-control': 'no-cache',
-      authorization: 'Bearer BQDt9RKUGKS-O7CCMLbhjVDnIe_29NEggZs6oS7J4KIT1TjiDfyDzRzaIN2pd8Q6Z7s7qo0va5KYFYhzrWdbKXSoq8xRaw_rDHF7tdm9DYIV9c1V2D7szqri1Ad5H3U25QvBZbInz0PjomTc69bSTKHHlYNv28VdlLHbu3_opmwnSeGsNJtrHLV0Xx92TOjKzM5e',
+      authorization: 'Bearer BQCZnb8ZVTnBY4FBDRRaEJJSpC9o6ro7priEfBgW7ULL8Dkann8rcSLSM_679n7bHK_BHuY7mUeMbivF-7G4OuqgbA20VySLCEv6s0H7fYPRdXBQnXQQF3__629IR2WceDNdqHUfGykuR5m0NYkrGMOpzlQpQMis7dtZZZhGGgqmYJ0C9hnULOdy829WmOOQqNAP',
       'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
     },
     formData:
