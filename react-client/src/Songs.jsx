@@ -5,13 +5,15 @@ class Songs extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentUrl:'',
+      currentUrl: '',
       audio: null,
       status: false
     }
   }
   playSong(url) {
-    var audio = new Audio(url)
+    var audio = new Audio(url);
+
+
     audio.play();
   }
   render() {
