@@ -55,7 +55,7 @@ app.post('/music', (request, response) => {
     {
       'postman-token': '4b11e797-b9b5-c5fd-ed06-6544c6c009b9',
       'cache-control': 'no-cache',
-      authorization: 'Bearer BQCeoRw0M-72S2EGtxyJqZ1qBa-pzRaIH8wdHuvawg6_U8I7LnKRrkh3u0YtPVOsbaOVSVjlNtapcZ4BNcxMOfpsTp4z0ThUM7NGWuU0TDYd_aEx2JfinQcULcgHAi4ji1ziF81BxvFxbFIYaptTYgILNgFKZ4BDMriHoIDJSOJVE76ZeYSpE1Og9MSYTtrZE5JB',
+      authorization: 'Bearer BQDt9RKUGKS-O7CCMLbhjVDnIe_29NEggZs6oS7J4KIT1TjiDfyDzRzaIN2pd8Q6Z7s7qo0va5KYFYhzrWdbKXSoq8xRaw_rDHF7tdm9DYIV9c1V2D7szqri1Ad5H3U25QvBZbInz0PjomTc69bSTKHHlYNv28VdlLHbu3_opmwnSeGsNJtrHLV0Xx92TOjKzM5e',
       'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
     },
     formData:
@@ -67,9 +67,7 @@ app.post('/music', (request, response) => {
 
   rp(options)
     .then((artists) => {
-      var parsed = JSON.parse(artists)
-      console.log('parse', parsed, parsed.artists.items )
-      response.end('Fin')
+      response.json(artists)
     })
 
 })

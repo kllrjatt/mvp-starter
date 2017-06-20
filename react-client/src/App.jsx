@@ -40,8 +40,7 @@ class App extends Component {
       artist: this.state.query
     })
       .then((response) => {
-        console.log('Post Works')
-        this.getArtistInfo();
+       var parsed = JSON.parse(response.data)
       })
       .catch((error) => {
         console.log('There is a post request error', error)
