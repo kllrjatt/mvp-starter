@@ -38,7 +38,6 @@ class Songs extends Component {
 
   }
   render() {
-    console.log(this.props)
     var tracks = this.props.tracks;
     return (
       <div>

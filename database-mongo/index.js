@@ -15,15 +15,15 @@ var artistSchema = mongoose.Schema({
 
 });
 
-var trackSchema = mongoose.Schema({
+// var trackSchema = mongoose.Schema({
 
-});
+// });
 
 var Artist = mongoose.model('Artist', artistSchema);
 
-var Track = mongoose.model('Track', trackSchema);
+// var Track = mongoose.model('Track', trackSchema);
 
 
 module.exports = Artist;
 
-module.exports = Track;
+// module.exports = Track;
