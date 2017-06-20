@@ -27,7 +27,7 @@ app.listen(3000, function () {
 // write get and post route for the api calls
 
 // search the data base for the top 25 artists, 
-app.get('/music', (request, response) => {
+app.get('/artist', (request, response) => {
   // find all Artist , limited to  the top artist, sorted by number of followers and execute the search 
   Artist.find({}).limit(1).sort({ followers: -1 }).exec()
     // then with the results, send a response code of 200 and send result
@@ -42,12 +42,11 @@ app.get('/music', (request, response) => {
     })
 })
 
-app.post('/music', (request, response) => {
+app.post('/artist', (request, response) => {
   // add static options 
   var searchTerm = request.body.artist
   // update search token every hour - need post request to do get request -- future use case 
-
-  var options = {
+  var artistOptions = {
     method: 'GET',
     url: 'https://api.spotify.com/v1/search',
     qs: { q: `${searchTerm}`, type: 'artist', limit: '1' },
@@ -65,9 +64,42 @@ app.post('/music', (request, response) => {
     }
   };
 
-  rp(options)
-    .then((artists) => {
-      response.json(artists)
+  rp(artistOptions)
+    .then((artist) => {
+      response.json(artist)
     })
 
 })
+
+
+app.post('/music', (request, response) => {
+  // add static options 
+  var searchTerm = request.body.artist
+  console.log('search', searchTerm)
+  // update search token every hour - need post request to do get request -- future use case 
+  var options = {
+    method: 'GET',
+    url: 'https://api.spotify.com/v1/artists/' + searchTerm + '/top-tracks',
+    qs: { country: 'US' },
+    headers:
+    {
+      'postman-token': '1854da4a-c09e-b61f-9d88-6bd0cd410187',
+      'cache-control': 'no-cache',
+      authorization: 'Bearer BQCZnb8ZVTnBY4FBDRRaEJJSpC9o6ro7priEfBgW7ULL8Dkann8rcSLSM_679n7bHK_BHuY7mUeMbivF-7G4OuqgbA20VySLCEv6s0H7fYPRdXBQnXQQF3__629IR2WceDNdqHUfGykuR5m0NYkrGMOpzlQpQMis7dtZZZhGGgqmYJ0C9hnULOdy829WmOOQqNAP',
+      'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+    },
+    formData:
+    {
+      grant_type: 'refresh_token',
+      refresh_token: '{{refresh_token}}'
+    }
+  };
+
+  rp(options)
+    .then((music) => {
+      console.log(music)
+      response.json(music)
+    })
+
+})
+

@@ -22,6 +22,7 @@ class App extends Component {
 
   componenetDidMount() {
     this.getArtistInfo();
+    this.addArtist();
   }
 
   getArtistInfo() {
@@ -37,14 +38,27 @@ class App extends Component {
   }
 
   addArtist() {
-    axios.post('/music', {
+    axios.post('/artist', {
       artist: this.state.query
     })
       .then((response) => {
         var parsed = JSON.parse(response.data);
         var artist = parsed.artists.items[0];
-        console.log(artist)
         this.setState({ artist })
+
+      })
+      .catch((error) => {
+        console.log('There is a post request error', error)
+      })
+  }
+
+  addMusic() {
+    axios.post('/music', {
+      artist: this.state.artist.id
+    })
+      .then((response) => {
+        var parsed = JSON.parse(response.data);
+        console.log('parsed', parsed)
 
       })
       .catch((error) => {
