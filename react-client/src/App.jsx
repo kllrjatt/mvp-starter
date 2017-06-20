@@ -6,6 +6,7 @@ import './style.css';
 import { FormGroup, FormControl, InputGroup, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
 import Promise from 'promise';
+import Profile from './Profile.jsx'
 
 
 class App extends Component {
@@ -40,10 +41,10 @@ class App extends Component {
       artist: this.state.query
     })
       .then((response) => {
-       var parsed = JSON.parse(response.data);
-       var artist = parsed.artists.items[0];
-       console.log(artist)
-       this.setState({artist})
+        var parsed = JSON.parse(response.data);
+        var artist = parsed.artists.items[0];
+        console.log(artist)
+        this.setState({ artist })
 
       })
       .catch((error) => {
@@ -81,10 +82,8 @@ class App extends Component {
             </InputGroup.Addon>
           </InputGroup>
         </FormGroup>
-        <div className='artistProfile'>
-          <div>Artist Picture Goes Here</div>
-          <div>Artist Name Goes Here</div>
-        </div>
+        <Profile
+          artist={this.state.artist} />
         <div className='music'>
           Artist Music Goes Here
         </div>
