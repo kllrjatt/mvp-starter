@@ -14,7 +14,7 @@ class Profile extends Component {
       artist = this.props.artist
     }
     return (
-      <div>
+      <div className='profile'>
         <img
           alt='Profile'
           className='profileImage'
@@ -23,7 +23,7 @@ class Profile extends Component {
         <div className='profileInfo'>
           <div className='profileName'>{artist.name}</div>
           <div className='profileFollowers'>{artist.followers.total}</div>
-          <div clasName='profileGenre'>
+          <div className='profileGenre'>
             {
               artist.genres.map((genre, i) => {
                 genre = genre !== artist.genres[artist.genres.length - 1] ? `${genre}, ` : `${genre}.`
