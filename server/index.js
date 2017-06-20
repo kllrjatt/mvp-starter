@@ -67,8 +67,9 @@ app.post('/music', (request, response) => {
 
   rp(options)
     .then((artists) => {
-      console.log('test', artists)
-      console.log('parse', JSON.parse(artists).artists.items)
+      var parsed = JSON.parse(artists)
+      console.log('parse', parsed, parsed.artists.items )
+      response.end('Fin')
     })
 
 })

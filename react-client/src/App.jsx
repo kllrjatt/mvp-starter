@@ -28,7 +28,7 @@ class App extends Component {
       artist: this.state.query
     })
       .then((response) => {
-        this.setState({ artist: res.data })
+        this.setState({ artist: response.data })
       })
       .catch((error) => {
         console.log('there is a get error', error)
