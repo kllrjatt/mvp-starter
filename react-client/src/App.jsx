@@ -21,8 +21,7 @@ class App extends Component {
   }
 
   componenetDidMount() {
-    this.addArtist();
-    this.addMusic();
+    this.addArtist()
   }
 
   getArtistInfo() {
@@ -51,21 +50,6 @@ class App extends Component {
         console.log('There is a post request error', error)
       })
   }
-
-  addMusic() {
-    axios.post('/music', {
-      artist: this.state.artist.id
-    })
-      .then((response) => {
-        var parsed = JSON.parse(response.data);
-        console.log('parsed', parsed)
-
-      })
-      .catch((error) => {
-        console.log('There is a post request error', error)
-      })
-  }
-
   // add render component 
   render() {
     // add return function and add div tag to it with some text

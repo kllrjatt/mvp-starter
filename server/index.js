@@ -54,7 +54,7 @@ app.post('/artist', (request, response) => {
     {
       'postman-token': '4b11e797-b9b5-c5fd-ed06-6544c6c009b9',
       'cache-control': 'no-cache',
-      authorization: 'Bearer BQCZnb8ZVTnBY4FBDRRaEJJSpC9o6ro7priEfBgW7ULL8Dkann8rcSLSM_679n7bHK_BHuY7mUeMbivF-7G4OuqgbA20VySLCEv6s0H7fYPRdXBQnXQQF3__629IR2WceDNdqHUfGykuR5m0NYkrGMOpzlQpQMis7dtZZZhGGgqmYJ0C9hnULOdy829WmOOQqNAP',
+      authorization: 'Bearer BQCrMKFTs2h-K-TWZkFwjN9Z-DPB4pB0sDhbGRbaXAt636io1IZZoVy2gTeKa10Y-1mawfjYrv4c8TsuCZnS5NXZqsR61IGkD5yEvPRmcPD1YxWRKLno9HuTdxAWKw8GzVFTCGiDFE5C-NSZvvh5gdJArWh7P_AeDQ-WaAs7FtF0E4wD4Xbw-y1uRos98MYYEGLa',
       'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
     },
     formData:
@@ -66,40 +66,40 @@ app.post('/artist', (request, response) => {
 
   rp(artistOptions)
     .then((artist) => {
-      response.json(artist)
+      response.write('[' + JSON.stringify(artist) +',')
+      return artist
+    })
+    .then((artistID) => {
+      var searchTerm = JSON.parse(artistID).artists.items[0].id
+
+      // update search token every hour - need post request to do get request -- future use case 
+      var musicOptions = {
+        method: 'GET',
+        url: 'https://api.spotify.com/v1/artists/' + searchTerm + '/top-tracks',
+        qs: { country: 'US' },
+        headers:
+        {
+          'postman-token': '1854da4a-c09e-b61f-9d88-6bd0cd410187',
+          'cache-control': 'no-cache',
+          authorization: 'Bearer BQCrMKFTs2h-K-TWZkFwjN9Z-DPB4pB0sDhbGRbaXAt636io1IZZoVy2gTeKa10Y-1mawfjYrv4c8TsuCZnS5NXZqsR61IGkD5yEvPRmcPD1YxWRKLno9HuTdxAWKw8GzVFTCGiDFE5C-NSZvvh5gdJArWh7P_AeDQ-WaAs7FtF0E4wD4Xbw-y1uRos98MYYEGLa',
+          'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
+        },
+        formData:
+        {
+          grant_type: 'refresh_token',
+          refresh_token: '{{refresh_token}}'
+        }
+      };
+
+      rp(musicOptions)
+        .then((music) => {
+          console.log(music)
+          response.write(JSON.stringify(music) +']')
+          response.end()
+        })
+
     })
 
 })
 
-
-app.post('/music', (request, response) => {
-  // add static options 
-  var searchTerm = request.body.artist
-  console.log('search', searchTerm)
-  // update search token every hour - need post request to do get request -- future use case 
-  var options = {
-    method: 'GET',
-    url: 'https://api.spotify.com/v1/artists/' + searchTerm + '/top-tracks',
-    qs: { country: 'US' },
-    headers:
-    {
-      'postman-token': '1854da4a-c09e-b61f-9d88-6bd0cd410187',
-      'cache-control': 'no-cache',
-      authorization: 'Bearer BQCZnb8ZVTnBY4FBDRRaEJJSpC9o6ro7priEfBgW7ULL8Dkann8rcSLSM_679n7bHK_BHuY7mUeMbivF-7G4OuqgbA20VySLCEv6s0H7fYPRdXBQnXQQF3__629IR2WceDNdqHUfGykuR5m0NYkrGMOpzlQpQMis7dtZZZhGGgqmYJ0C9hnULOdy829WmOOQqNAP',
-      'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
-    },
-    formData:
-    {
-      grant_type: 'refresh_token',
-      refresh_token: '{{refresh_token}}'
-    }
-  };
-
-  rp(options)
-    .then((music) => {
-      console.log(music)
-      response.json(music)
-    })
-
-})
 
