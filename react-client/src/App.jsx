@@ -21,8 +21,8 @@ class App extends Component {
   }
 
   componenetDidMount() {
-    this.getArtistInfo();
     this.addArtist();
+    this.addMusic();
   }
 
   getArtistInfo() {
