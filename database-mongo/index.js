@@ -12,18 +12,10 @@ db.once('open', function () {
 });
 
 var artistSchema = mongoose.Schema({
-
+  // add mongoose fields here
 });
-
-// var trackSchema = mongoose.Schema({
-
-// });
 
 var Artist = mongoose.model('Artist', artistSchema);
 
-// var Track = mongoose.model('Track', trackSchema);
-
 
 module.exports = Artist;
-
-// module.exports = Track;

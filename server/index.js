@@ -5,7 +5,7 @@ var Promise = require('bluebird');
 var Artist = require('../database-mongo/index.js');
 var react = require('react');
 
-var request = require('request');
+var request = require("request");
 var rp = require('request-promise');
 
 // promisfy Artist create and Artist find -- Artist is db 
@@ -34,17 +34,17 @@ app.get('/artist', (request, response) => {
     .then((result) => {
       response
         .status(200)
-        .send(result);
+        .send(result)
     })
     // if there is a error, console .log the error 
     .catch((error) => {
-      console.log('there is a issue', error);
-    });
-});
+      console.log('there is a issue', error)
+    })
+})
 
 app.post('/artist', (request, response) => {
   // add static options 
-  var searchTerm = request.body.artist;
+  var searchTerm = request.body.artist
   // update search token every hour - need post request to do get request -- future use case 
   var artistOptions = {
     method: 'GET',
@@ -54,7 +54,7 @@ app.post('/artist', (request, response) => {
     {
       'postman-token': '4b11e797-b9b5-c5fd-ed06-6544c6c009b9',
       'cache-control': 'no-cache',
-      'authorization': 'Bearer BQAtpCvOYE7YgDJmici-afnR21et1SftX_qUqQSak-fXOpMS9FqN5Ym0BsnC0LXWFdRGLMHmG7z9IelnDfGA6c2OW8CG5n8P-PqJECV2kzGma-OuSOhnqK8qFXozBeUxM8FzKW_ITSxJj5iPCz93RulLV5qP_2V6-LMXcXLbA57LJ95oNj1j6cPygwlpt3tlebw5',
+      authorization: 'Bearer BQCJ0tNiVL2nv-UiBzhz9i7FGb1M3tpoibO9KVrA1NLZYME8Cry-uWopbxt3CLwQf0zzN3Ww6YwOAKfOI4nHnqaH_l300gqn8MFXlYN9qky_GAaWk7bPs3GoicSrUZfEZ6QniMWpbOuZksLhqiRSuKxjiSyqvP3BCoFBMgI2DnXHV6ENmtQ57v50JmGeXG83kIm7',
       'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
     },
     formData:
@@ -66,11 +66,11 @@ app.post('/artist', (request, response) => {
 
   rp(artistOptions)
     .then((artist) => {
-      response.write('[' + JSON.stringify(artist) + ',');
-      return artist;
+      response.write('[' + JSON.stringify(artist) +',')
+      return artist
     })
     .then((artistID) => {
-      var searchTerm = JSON.parse(artistID).artists.items[0].id;
+      var searchTerm = JSON.parse(artistID).artists.items[0].id
 
       // update search token every hour - need post request to do get request -- future use case 
       var musicOptions = {
@@ -81,7 +81,7 @@ app.post('/artist', (request, response) => {
         {
           'postman-token': '1854da4a-c09e-b61f-9d88-6bd0cd410187',
           'cache-control': 'no-cache',
-          'authorization': 'Bearer BQAtpCvOYE7YgDJmici-afnR21et1SftX_qUqQSak-fXOpMS9FqN5Ym0BsnC0LXWFdRGLMHmG7z9IelnDfGA6c2OW8CG5n8P-PqJECV2kzGma-OuSOhnqK8qFXozBeUxM8FzKW_ITSxJj5iPCz93RulLV5qP_2V6-LMXcXLbA57LJ95oNj1j6cPygwlpt3tlebw5',
+          authorization: 'Bearer BQCJ0tNiVL2nv-UiBzhz9i7FGb1M3tpoibO9KVrA1NLZYME8Cry-uWopbxt3CLwQf0zzN3Ww6YwOAKfOI4nHnqaH_l300gqn8MFXlYN9qky_GAaWk7bPs3GoicSrUZfEZ6QniMWpbOuZksLhqiRSuKxjiSyqvP3BCoFBMgI2DnXHV6ENmtQ57v50JmGeXG83kIm7',
           'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
         },
         formData:
@@ -93,12 +93,12 @@ app.post('/artist', (request, response) => {
 
       rp(musicOptions)
         .then((music) => {
-          response.write(JSON.stringify(music) + ']');
-          response.end();
-        });
+          response.write(JSON.stringify(music) +']')
+          response.end()
+        })
 
-    });
+    })
 
-});
+})
 
 
