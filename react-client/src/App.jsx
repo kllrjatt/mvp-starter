@@ -47,7 +47,6 @@ class App extends Component {
         var tracks = JSON.parse(response.data[1]).tracks
         this.setState({ artist })
         this.setState({ tracks })
-        console.log(this.state)
       })
       .catch((error) => {
         console.log('There is a post request error', error)
@@ -63,7 +62,7 @@ class App extends Component {
     return (
       <div className='App'>
         <div className='AppTitle'>
-          OneMusic App to Rule Them All
+          Spotify Search
       </div>
         <FormGroup>
           <InputGroup>

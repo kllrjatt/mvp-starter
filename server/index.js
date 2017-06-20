@@ -54,7 +54,7 @@ app.post('/artist', (request, response) => {
     {
       'postman-token': '4b11e797-b9b5-c5fd-ed06-6544c6c009b9',
       'cache-control': 'no-cache',
-      authorization: 'Bearer BQCrMKFTs2h-K-TWZkFwjN9Z-DPB4pB0sDhbGRbaXAt636io1IZZoVy2gTeKa10Y-1mawfjYrv4c8TsuCZnS5NXZqsR61IGkD5yEvPRmcPD1YxWRKLno9HuTdxAWKw8GzVFTCGiDFE5C-NSZvvh5gdJArWh7P_AeDQ-WaAs7FtF0E4wD4Xbw-y1uRos98MYYEGLa',
+      authorization: 'Bearer BQBuXYoD9SCSwAHSpp45MepC3VO4bNZcx2yUkOhJz0Yyiy3xhEX38lT_iZc2ackGdortbFT7nS3Ly3nk-Gsv3c6WNjxRoac5mYooj2pBpKDEBdtRxtvMsZpODB9tBOHcr9kDugXk2HJwQxiHNt1dqg22N_SnhGA6hnWyJq7ZvMu8-uOLw7kQaM8I-n7kHxqpzwwW',
       'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
     },
     formData:
@@ -81,7 +81,7 @@ app.post('/artist', (request, response) => {
         {
           'postman-token': '1854da4a-c09e-b61f-9d88-6bd0cd410187',
           'cache-control': 'no-cache',
-          authorization: 'Bearer BQCrMKFTs2h-K-TWZkFwjN9Z-DPB4pB0sDhbGRbaXAt636io1IZZoVy2gTeKa10Y-1mawfjYrv4c8TsuCZnS5NXZqsR61IGkD5yEvPRmcPD1YxWRKLno9HuTdxAWKw8GzVFTCGiDFE5C-NSZvvh5gdJArWh7P_AeDQ-WaAs7FtF0E4wD4Xbw-y1uRos98MYYEGLa',
+          authorization: 'Bearer BQBuXYoD9SCSwAHSpp45MepC3VO4bNZcx2yUkOhJz0Yyiy3xhEX38lT_iZc2ackGdortbFT7nS3Ly3nk-Gsv3c6WNjxRoac5mYooj2pBpKDEBdtRxtvMsZpODB9tBOHcr9kDugXk2HJwQxiHNt1dqg22N_SnhGA6hnWyJq7ZvMu8-uOLw7kQaM8I-n7kHxqpzwwW',
           'content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
         },
         formData:
