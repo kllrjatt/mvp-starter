@@ -15,7 +15,7 @@ class App extends Component {
     super(props)
     this.state = {
       query: '',
-      artist: ''
+      artist: null
     }
   }
 
@@ -40,7 +40,11 @@ class App extends Component {
       artist: this.state.query
     })
       .then((response) => {
-       var parsed = JSON.parse(response.data)
+       var parsed = JSON.parse(response.data);
+       var artist = parsed.artists.items[0];
+       console.log(artist)
+       this.setState({artist})
+
       })
       .catch((error) => {
         console.log('There is a post request error', error)
